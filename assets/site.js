@@ -29,5 +29,21 @@
         if (links) links.classList.toggle('open');
     };
 
+    /* Click-to-load YouTube: nothing is requested from Google until the
+       visitor actually presses play. */
+    document.addEventListener('click', function (e) {
+        var btn = e.target.closest && e.target.closest('.video-play');
+        if (!btn) return;
+        var wrap = btn.closest('.video');
+        var id = wrap && wrap.getAttribute('data-yt');
+        if (!id) return;
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        f.title = wrap.getAttribute('data-title') || 'Video';
+        f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        f.setAttribute('allowfullscreen', '');
+        btn.parentNode.replaceChild(f, btn);
+    });
+
     document.addEventListener('DOMContentLoaded', applyLogos);
 })();
