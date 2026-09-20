@@ -605,10 +605,7 @@ footer.site-footer .theme-logo { height: 36px; margin-bottom: 14px; }
     object-fit: cover;
     object-position: center 15%;
     display: block;
-    filter: grayscale(1) contrast(1.02);
-    transition: filter 0.3s;
 }
-.person:hover .portrait img { filter: grayscale(0); }
 .person .person-body { padding: 24px 26px 28px; }
 .person .person-role {
     display: block;
