@@ -770,3 +770,53 @@ footer.site-footer .theme-logo { height: 36px; margin-bottom: 14px; }
     .spec tr.spec-group { padding: 12px 18px; }
     .spec tr.spec-group td { padding: 0; margin: 0; border-bottom: none; color: var(--gold); font-size: 10.5px; }
 }
+
+/* ========== FLOW DIAGRAM (what happens to your file) ========== */
+.flow { display: grid; grid-template-columns: 1.55fr 1fr; border: 1px solid var(--line); background: var(--panel); }
+@media (max-width: 860px) { .flow { grid-template-columns: 1fr; } }
+
+.flow-tag {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 18px 24px 0;
+}
+.flow-hidden { border-right: 1px solid var(--line); }
+@media (max-width: 860px) { .flow-hidden { border-right: none; border-bottom: 1px solid var(--line); } }
+
+.flow-steps { display: grid; grid-template-columns: 1fr 1fr; padding: 14px 10px 10px; }
+@media (max-width: 520px) { .flow-steps { grid-template-columns: 1fr; } }
+.flow-step { display: flex; gap: 14px; align-items: flex-start; padding: 12px 14px; }
+.flow-step span {
+    flex: none;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--line);
+    line-height: 1.1;
+}
+.flow-step p { color: var(--ink-2); font-size: 14.5px; line-height: 1.5; }
+
+.flow-out { background: var(--ink); display: flex; flex-direction: column; }
+.flow-out .flow-tag { color: color-mix(in srgb, var(--gold) 85%, white); }
+.flow-verdict {
+    font-family: var(--font-serif);
+    font-size: 21px;
+    line-height: 1.3;
+    color: var(--paper);
+    padding: 14px 24px 8px;
+}
+.flow-out .flow-foot {
+    margin-top: auto;
+    padding: 0 24px 22px;
+    font-size: 13px;
+    color: color-mix(in srgb, var(--paper) 62%, transparent);
+}
+[data-theme="dark"] .flow-out { background: #05070A; border-left: 1px solid var(--line); }
+@media (max-width: 860px) { [data-theme="dark"] .flow-out { border-left: none; border-top: 1px solid var(--line); } }
+[data-theme="dark"] .flow-verdict { color: var(--ink); }
+[data-theme="dark"] .flow-out .flow-foot { color: var(--muted); }
+
+.flow-caption { color: var(--ink-2); font-size: 15.5px; max-width: 660px; margin-top: 20px; }
