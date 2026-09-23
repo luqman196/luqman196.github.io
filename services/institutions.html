@@ -141,16 +141,13 @@
             <h2 class="section-title">Request a briefing.</h2>
             <p class="section-sub" style="margin-bottom:28px;">A 45-minute walkthrough of both systems
             on real (anonymised) cases — followed, if it makes sense, by a proof-of-value on yours.</p>
-            <form class="form-grid" name="institution-briefing" method="POST" data-netlify="true">
-                <div><label>Your name</label><input type="text" name="name" required></div>
-                <div><label>Institution</label><input type="text" name="institution" required></div>
-                <div><label>Role</label><input type="text" name="role"></div>
-                <div><label>Work email</label><input type="email" name="email" required></div>
-                <div><label>What are you evaluating?</label><textarea name="interest" rows="3" placeholder="e.g. bank statement analysis for SME pre-screening…"></textarea></div>
-                <div><button class="btn btn-primary" type="submit">Request briefing</button></div>
-            </form>
-            <p style="color:var(--text-muted); font-size:13.5px; margin-top:18px;">
-                Or email <a href="mailto:advisory@kreditlab.my" style="color:var(--teal);">advisory@kreditlab.my</a> directly.</p>
+            <div class="btn-row" style="justify-content:flex-start;">
+                <a class="btn btn-primary" href="mailto:advisory@kreditlab.my?subject=Briefing%20request">Email us</a>
+                <a class="btn btn-secondary" href="tel:+60164414739">+6016-441 4739</a>
+            </div>
+            <p style="color:var(--text-muted); font-size:13.5px; margin-top:24px; max-width:640px;">
+                Tell us your institution and role, and what you are evaluating — pre-screening,
+                portfolio review, or something else — and we will come back with times.</p>
         </div>
     </section>
 
