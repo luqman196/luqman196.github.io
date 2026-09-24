@@ -624,6 +624,12 @@ footer.site-footer .theme-logo { height: 36px; margin-bottom: 14px; }
 
 .pill span::before { content: none; }
 
+/* Three-way variant: row label on the left, then one pill per party. */
+.vs3 .vs-head,
+.vs3 .vs-row { grid-template-columns: 150px repeat(3, 1fr); gap: 8px; }
+.vs3 .vs-row { align-items: stretch; }
+.vs3 .vs-label { text-align: left; align-self: center; padding: 0 4px 0 6px; }
+
 @media (max-width: 860px) {
     .vs-head { display: none; }
     .vs-row {
@@ -637,6 +643,7 @@ footer.site-footer .theme-logo { height: 36px; margin-bottom: 14px; }
     .vs-row:last-child { border-bottom: none; }
     .pill { min-height: 0; }
     .vs-label { text-align: left; color: var(--gold); padding: 0 2px 2px; order: -1; }
+    .vs3 .vs-label { align-self: auto; padding: 0 2px 2px; }
     .vs-group { text-align: left; padding: 22px 14px 8px; border-top: 1px solid var(--line); }
     .pill span::before {
         content: attr(data-who);
