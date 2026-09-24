@@ -109,6 +109,15 @@ nav.site-nav {
 }
 .nav-links a:hover { color: var(--ink); }
 .nav-links a.active { color: var(--ink); box-shadow: 0 2px 0 var(--accent); }
+.nav-links a.nav-login {
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 5px 11px;
+    white-space: nowrap;
+    transition: border-color 0.15s;
+}
+.nav-links a.nav-login:hover { border-color: var(--accent); }
 
 .toggle-btn {
     background: none;
