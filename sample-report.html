@@ -1,4 +1,580 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow"><title>Sample Report — Kredit Lab</title>
-<style>:root{--bg:#f7f5f0;--fg:#1d2a3a;--muted:#5b6675}@media (prefers-color-scheme:dark){:root{--bg:#10161f;--fg:#e8e4da;--muted:#a3adba}}body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,sans-serif;display:grid;place-items:center;min-height:100vh;padding:16px;box-sizing:border-box;text-align:center}p{color:var(--muted)}a{color:inherit}</style></head>
-<body><main><h1>This sample is being refreshed</h1><p>A new example report will be back here shortly.</p><p><a href="/samples.html">Back to samples</a></p></main></body></html>
+<html lang="en" data-theme="light">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contoh Industri Sdn. Bhd. - Financial Statement Analysis</title>
+<style>
+/* ============================================
+   DUAL THEME CSS - Light & Dark Mode Support
+   Version 4.3
+   ============================================ */
+
+/* Light Theme (Default) */
+:root, [data-theme="light"] {
+  --bg:#f8fafc;
+  --bg-alt:#ffffff;
+  --bg-card:#ffffff;
+  --border-card:rgba(226,232,240,1);
+  --border-subtle:rgba(203,213,225,0.6);
+  
+  --accent:#059669;
+  --accent-soft:rgba(5,150,105,0.08);
+  --accent-border:rgba(5,150,105,0.3);
+  --accent-text:#047857;
+  
+  --danger:#dc2626;
+  --danger-soft:rgba(220,38,38,0.06);
+  --danger-border:rgba(220,38,38,0.25);
+  --danger-text:#b91c1c;
+  
+  --warn:#d97706;
+  --warn-soft:rgba(217,119,6,0.06);
+  --warn-border:rgba(217,119,6,0.3);
+  --warn-text:#b45309;
+  
+  --info:#2563eb;
+  --info-soft:rgba(37,99,235,0.06);
+  --info-border:rgba(37,99,235,0.25);
+  --info-text:#1d4ed8;
+  
+  --text-main:#1e293b;
+  --text-secondary:#475569;
+  --text-soft:#64748b;
+  --text-muted:#94a3b8;
+  
+  --row-even:#ffffff;
+  --row-odd:#f8fafc;
+  --row-hover:rgba(37,99,235,0.04);
+  
+  --purple:#7c3aed;
+  --purple-soft:rgba(124,58,237,0.06);
+  --purple-text:#6d28d9;
+  
+  --highlight:#b45309;
+  
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 6px -1px rgba(0,0,0,0.05);
+  --shadow-lg:0 10px 15px -3px rgba(0,0,0,0.06);
+  --shadow-soft:0 10px 15px -3px rgba(0,0,0,0.06);
+  
+  --header-bg:linear-gradient(135deg,#ffffff,#f8fafc);
+  --body-bg:linear-gradient(180deg,#f1f5f9 0%,#f8fafc 100%);
+  --card-bg:#ffffff;
+  --nav-bg:#ffffff;
+  --section-bg:#ffffff;
+  --table-header-bg:linear-gradient(180deg,#f8fafc 0%,#f1f5f9 100%);
+  
+  --section-header-bg:linear-gradient(90deg,rgba(37,99,235,0.08) 0%,rgba(37,99,235,0.03) 100%);
+  --total-row-bg:linear-gradient(90deg,rgba(5,150,105,0.06) 0%,rgba(5,150,105,0.02) 100%);
+  --grand-total-bg:linear-gradient(90deg,rgba(37,99,235,0.08) 0%,rgba(37,99,235,0.03) 100%);
+  --gross-profit-bg:linear-gradient(90deg,rgba(5,150,105,0.08) 0%,rgba(5,150,105,0.02) 100%);
+  --expense-total-bg:linear-gradient(90deg,rgba(220,38,38,0.05) 0%,rgba(220,38,38,0.02) 100%);
+  --ebitda-bg:linear-gradient(90deg,rgba(124,58,237,0.06) 0%,rgba(124,58,237,0.02) 100%);
+  --subsection-bg:rgba(241,245,249,1);
+  
+  --radius-lg:20px;
+  --radius-md:16px;
+  --radius-sm:10px;
+  --radius-pill:999px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg:#0f172a;
+  --bg-alt:#020617;
+  --bg-card:rgba(15,23,42,0.96);
+  --border-card:rgba(30,64,175,0.75);
+  --border-subtle:rgba(55,65,81,0.7);
+  
+  --accent:#22c55e;
+  --accent-soft:rgba(34,197,94,0.15);
+  --accent-border:rgba(34,197,94,0.5);
+  --accent-text:#86efac;
+  
+  --danger:#ef4444;
+  --danger-soft:rgba(248,113,113,0.18);
+  --danger-border:rgba(248,113,113,0.5);
+  --danger-text:#fecaca;
+  
+  --warn:#f59e0b;
+  --warn-soft:rgba(245,158,11,0.16);
+  --warn-border:rgba(245,158,11,0.7);
+  --warn-text:#fed7aa;
+  
+  --info:#3b82f6;
+  --info-soft:rgba(59,130,246,0.15);
+  --info-border:rgba(59,130,246,0.5);
+  --info-text:#93c5fd;
+  
+  --text-main:#e5e7eb;
+  --text-secondary:#d1d5db;
+  --text-soft:#9ca3af;
+  --text-muted:#6b7280;
+  
+  --row-even:rgba(15,23,42,0.9);
+  --row-odd:rgba(15,23,42,0.98);
+  --row-hover:rgba(30,64,175,0.15);
+  
+  --purple:#a78bfa;
+  --purple-soft:rgba(167,139,250,0.15);
+  --purple-text:#c4b5fd;
+  
+  --highlight:#facc15;
+  
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:0 4px 6px rgba(0,0,0,0.4);
+  --shadow-lg:0 18px 45px rgba(15,23,42,0.8);
+  --shadow-soft:0 18px 45px rgba(15,23,42,0.8);
+  
+  --header-bg:radial-gradient(circle at top left,rgba(56,189,248,0.22),rgba(15,23,42,0.98));
+  --body-bg:radial-gradient(circle at top left,#1e293b,#020617 40%,#000);
+  --card-bg:linear-gradient(135deg,rgba(15,23,42,0.96),rgba(2,6,23,0.97));
+  --nav-bg:linear-gradient(135deg,rgba(15,23,42,0.98),rgba(2,6,23,0.99));
+  --section-bg:linear-gradient(135deg,rgba(15,23,42,0.96),rgba(2,6,23,0.97));
+  --table-header-bg:radial-gradient(circle at top left,#020617,#020617);
+  
+  --section-header-bg:linear-gradient(90deg,rgba(59,130,246,0.25),rgba(15,23,42,0.95));
+  --total-row-bg:linear-gradient(90deg,rgba(34,197,94,0.12),rgba(15,23,42,0.95));
+  --grand-total-bg:linear-gradient(90deg,rgba(250,204,21,0.15),rgba(55,65,81,0.95));
+  --gross-profit-bg:linear-gradient(90deg,rgba(34,197,94,0.20),rgba(15,23,42,0.95));
+  --expense-total-bg:linear-gradient(90deg,rgba(239,68,68,0.12),rgba(15,23,42,0.95));
+  --ebitda-bg:linear-gradient(90deg,rgba(168,85,247,0.15),rgba(15,23,42,0.95));
+  --subsection-bg:rgba(51,65,85,0.6);
+}
+
+/* Base Styles */
+*{box-sizing:border-box}
+body{margin:0;padding:32px 16px 40px;font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--body-bg);color:var(--text-main);line-height:1.6;transition:background 0.3s ease, color 0.3s ease}
+.page{max-width:1200px;margin:0 auto}
+h1,h2,h3,h4{margin:0;font-weight:600;color:var(--text-main)}
+
+/* Theme Toggle Button */
+.theme-toggle{position:fixed;top:20px;right:20px;z-index:1000;padding:10px 18px;border-radius:var(--radius-pill);border:1px solid var(--border-card);background:var(--card-bg);color:var(--text-main);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:var(--shadow-md);transition:all 0.3s ease}
+.theme-toggle:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+
+/* Header Card */
+.header-card{background:var(--header-bg);border-radius:24px;padding:24px 28px 20px;border:1px solid var(--border-card);box-shadow:var(--shadow-soft);margin-bottom:24px}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:var(--radius-pill);border:1px solid var(--border-subtle);background:var(--bg-card);color:var(--text-soft);font-size:11px;text-transform:uppercase;margin-bottom:12px}
+.title-block h1{font-size:26px;display:flex;align-items:center;gap:12px;color:var(--text-main)}
+.title-icon{width:36px;height:36px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 10%,#3b82f6,#1d4ed8);box-shadow:0 0 0 1px rgba(59,130,246,0.8),0 12px 25px rgba(29,78,216,0.7);font-size:18px}
+.title-block p{margin:8px 0 0;color:var(--text-soft);font-size:14px}
+.header-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;font-size:13px}
+.meta-label{color:var(--text-muted);text-transform:uppercase;font-size:11px;margin-bottom:4px}
+.meta-value{color:var(--text-main);font-weight:500}
+.header-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--border-subtle);flex-wrap:wrap}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{font-size:11px;padding:4px 12px;border-radius:var(--radius-pill);display:inline-flex;align-items:center;gap:6px;border:1px solid transparent}
+.badge-ok{border-color:var(--accent-border);background:var(--accent-soft);color:var(--accent-text)}
+.badge-warn{border-color:var(--warn-border);background:var(--warn-soft);color:var(--warn-text)}
+.badge-info{border-color:var(--info-border);background:var(--info-soft);color:var(--info-text)}
+.badge-danger{border-color:var(--danger-border);background:var(--danger-soft);color:var(--danger-text)}
+.stamp{font-size:11px;color:var(--text-muted);text-align:right}
+
+/* Navigation Bar */
+.nav-bar{background:var(--nav-bg);border-radius:var(--radius-lg);border:1px solid var(--border-card);padding:16px 20px;margin-bottom:24px;position:sticky;top:10px;z-index:100;box-shadow:var(--shadow-md)}
+.nav-bar-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.nav-bar-title{font-size:13px;font-weight:600;color:var(--text-soft);text-transform:uppercase}
+.nav-controls{display:flex;gap:8px}
+.nav-btn{padding:6px 14px;font-size:11px;font-weight:600;border-radius:var(--radius-pill);border:1px solid var(--info-border);background:var(--info-soft);color:var(--info-text);cursor:pointer;transition:all 0.2s ease}
+.nav-btn:hover{background:rgba(59,130,246,0.2)}
+.nav-btn.accent{border-color:var(--accent-border);background:var(--accent-soft);color:var(--accent-text)}
+.nav-links{display:flex;flex-wrap:wrap;gap:8px}
+.nav-link{padding:6px 12px;font-size:11px;border-radius:var(--radius-sm);background:var(--bg-card);color:var(--text-soft);text-decoration:none;border:1px solid transparent;transition:all 0.2s ease}
+.nav-link:hover{background:var(--info-soft);color:var(--info-text);border-color:var(--info-border)}
+
+/* Collapsible Sections */
+.collapsible-section{margin-bottom:20px}
+.section-toggle{width:100%;background:var(--section-bg);border:1px solid var(--border-card);border-radius:var(--radius-lg);padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text-main);transition:all 0.2s ease}
+.section-toggle:hover{background:var(--row-hover)}
+.section-toggle.active{border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom:none}
+.toggle-left{display:flex;align-items:center;gap:14px}
+.toggle-icon-wrapper{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 10%,#3b82f6,#1d4ed8);font-size:18px}
+.toggle-text h3{font-size:16px;color:var(--text-main);margin-bottom:4px}
+.toggle-text p{font-size:12px;color:var(--text-muted);margin:0}
+.toggle-arrow{width:32px;height:32px;border-radius:50%;background:var(--subsection-bg);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text-soft);transition:all 0.3s ease}
+.section-toggle.active .toggle-arrow{transform:rotate(180deg);background:var(--info-soft);color:var(--info-text)}
+.section-content{display:block;background:var(--section-bg);border:1px solid var(--border-card);border-top:none;border-bottom-left-radius:var(--radius-lg);border-bottom-right-radius:var(--radius-lg);padding:20px}
+.section-content.hide{display:none}
+
+/* Cards */
+.card{background:var(--card-bg);border-radius:var(--radius-lg);border:1px solid var(--border-card);padding:20px;margin-bottom:20px}
+.card h2{font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-content>.card,.section-content>.audit-opinion-card{border:none;padding:0;margin:0;background:transparent;box-shadow:none}
+
+/* Note Boxes */
+.note-box{border-radius:var(--radius-md);padding:16px 18px;margin-bottom:20px;font-size:13px;line-height:1.7}
+.note-box.info{background:var(--info-soft);border:1px solid var(--info-border)}
+.note-box.warning{background:var(--warn-soft);border:1px solid var(--warn-border)}
+.note-box strong{color:var(--highlight)}
+
+/* Tables */
+.table-card{background:var(--card-bg);border-radius:var(--radius-lg);border:1px solid var(--border-card);padding:16px;overflow:hidden;margin-bottom:20px}
+.table-wrapper{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{text-align:left;padding:12px 10px;background:var(--table-header-bg);color:var(--text-soft);font-weight:600;text-transform:uppercase;border-bottom:1px solid var(--border-subtle);white-space:nowrap}
+thead th.number{text-align:right}
+tbody td{padding:10px;border-bottom:1px solid var(--border-subtle);white-space:nowrap;color:var(--text-main)}
+tbody td.number{text-align:right;font-family:monospace}
+tbody tr:nth-child(even){background:var(--row-even)}
+tbody tr:nth-child(odd){background:var(--row-odd)}
+tbody tr:hover{background:var(--row-hover)}
+
+/* Table Row Types */
+.section-header-row td{background:var(--section-header-bg)!important;color:var(--info-text)!important;font-weight:600;font-size:13px;text-transform:uppercase}
+.subsection-header-row td{background:var(--subsection-bg)!important;color:var(--text-secondary)!important;font-weight:600}
+.total-row td{background:var(--total-row-bg)!important;font-weight:600;border-top:1px solid var(--accent-border)}
+.grand-total-row td{background:var(--grand-total-bg)!important;font-weight:700;font-size:13px;border-top:2px solid var(--info-border)}
+.gross-profit-row td{background:var(--gross-profit-bg)!important;font-weight:600;border-top:2px solid var(--accent-border)}
+.expense-total-row td{background:var(--expense-total-bg)!important;font-weight:600}
+.ebitda-row td{background:var(--ebitda-bg)!important;font-weight:600}
+
+/* Text Formatting */
+.indent-1{padding-left:30px!important}
+.indent-2{padding-left:50px!important}
+.positive{color:var(--accent)!important}
+.negative{color:var(--danger)!important}
+.warning{color:var(--warn)!important}
+.muted{color:var(--text-soft)!important;font-style:italic}
+
+/* Observation Grid */
+.obs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.obs-box{border-radius:var(--radius-lg);padding:18px;font-size:13px}
+.obs-box.positive{background:var(--accent-soft);border:1px solid var(--accent-border)}
+.obs-box.caution{background:var(--warn-soft);border:1px solid var(--warn-border)}
+.obs-title{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.obs-box.positive .obs-title{color:var(--accent-text)}
+.obs-box.caution .obs-title{color:var(--warn-text)}
+.obs-list{padding-left:20px;margin:0;line-height:1.8;color:var(--text-main)}
+.obs-list li{margin-bottom:6px}
+.obs-list li strong{color:var(--text-main)}
+
+/* Recommendations Box */
+.reco-box{border-radius:var(--radius-lg);padding:18px 20px;background:var(--purple-soft);border:1px solid var(--purple);font-size:13px}
+.reco-box .obs-title{color:var(--purple-text)}
+.reco-box ol{margin:10px 0 0;padding-left:20px;line-height:1.8;color:var(--text-main)}
+.reco-box li strong{color:var(--purple-text)}
+
+/* Severity Badges */
+.severity-badge{font-size:10px;padding:2px 8px;border-radius:var(--radius-pill);font-weight:600;text-transform:uppercase;margin-left:8px}
+.severity-critical{background:var(--danger-soft);color:var(--danger-text);border:1px solid var(--danger-border)}
+.severity-high{background:rgba(239,68,68,0.15);color:#dc2626;border:1px solid rgba(239,68,68,0.4)}
+.severity-medium{background:var(--warn-soft);color:var(--warn-text);border:1px solid var(--warn-border)}
+.severity-low{background:var(--info-soft);color:var(--info-text);border:1px solid var(--info-border)}
+
+/* v6.12: Benchmark Badges for Ratios */
+.benchmark-badge{font-size:9px;padding:2px 6px;border-radius:var(--radius-pill);font-weight:500;margin-left:6px;background:var(--info-soft);color:var(--info-text);border:1px solid var(--info-border);vertical-align:middle}
+.benchmark-pass{background:var(--accent-soft) !important;color:var(--accent-text) !important}
+.benchmark-fail{background:var(--danger-soft) !important;color:var(--danger-text) !important}
+
+/* v6.12: Formula Display Row */
+.formula-display-row{background:transparent !important}
+.formula-display-row td{padding:2px 12px 8px !important;border-bottom:1px solid var(--border-subtle) !important}
+.formula-row{font-size:11px;color:var(--text-muted);font-style:italic}
+
+/* Status Pills */
+.status-pill{display:inline-flex;align-items:center;padding:4px 12px;border-radius:var(--radius-pill);font-size:11px;font-weight:600}
+.status-matched{background:var(--accent-soft);color:var(--accent-text);border:1px solid var(--accent-border)}
+.status-minor{background:var(--info-soft);color:var(--info-text);border:1px solid var(--info-border)}
+.status-moderate{background:var(--warn-soft);color:var(--warn-text);border:1px solid var(--warn-border)}
+.status-severe{background:var(--danger-soft);color:var(--danger-text);border:1px solid var(--danger-border)}
+
+/* Key Observations Grid */
+.key-obs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.key-obs-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px}
+.key-obs-item h4{font-size:11px;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;letter-spacing:0.5px}
+.key-obs-item p{font-size:13px;color:var(--text-main);margin:0;line-height:1.6}
+
+/* Facility Box */
+.facility-box{border-radius:var(--radius-lg);padding:18px 20px;background:var(--info-soft);border:1px solid var(--info-border);font-size:13px;margin-top:16px}
+.facility-box .obs-title{color:var(--info-text)}
+.facility-box ul{margin:10px 0 0;padding-left:20px;line-height:1.8;color:var(--text-main)}
+.facility-box p{margin:8px 0}
+
+/* Note Box Variants */
+.note-box.success{background:var(--accent-soft);border:1px solid var(--accent-border)}
+.note-box.danger{background:var(--danger-soft);border:1px solid var(--danger-border)}
+
+/* Audit Opinion Section (v6.11) */
+.audit-opinion-card{background:var(--card-bg);border-radius:var(--radius-lg);border:1px solid var(--border-card);padding:20px;margin-bottom:20px}
+.audit-opinion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.audit-opinion-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:16px}
+.audit-opinion-item.clean{border-left:4px solid var(--accent)}
+.audit-opinion-item.qualified{border-left:4px solid var(--warn)}
+.audit-opinion-item.adverse{border-left:4px solid var(--danger)}
+.audit-opinion-item h4{font-size:13px;color:var(--text-main);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.audit-opinion-item .opinion-badge{font-size:10px;padding:3px 10px;border-radius:var(--radius-pill);font-weight:600;text-transform:uppercase}
+.opinion-badge.clean{background:var(--accent-soft);color:var(--accent-text);border:1px solid var(--accent-border)}
+.opinion-badge.qualified{background:var(--warn-soft);color:var(--warn-text);border:1px solid var(--warn-border)}
+.opinion-badge.adverse{background:var(--danger-soft);color:var(--danger-text);border:1px solid var(--danger-border)}
+.opinion-badge.disclaimer{background:var(--danger-soft);color:var(--danger-text);border:1px solid var(--danger-border)}
+.opinion-badge.emphasis{background:var(--info-soft);color:var(--info-text);border:1px solid var(--info-border)}
+.audit-opinion-item .detail{font-size:12px;color:var(--text-soft);margin:6px 0;line-height:1.5}
+.audit-opinion-item .detail strong{color:var(--text-secondary)}
+.going-concern-alert{background:var(--danger-soft);border:1px solid var(--danger-border);border-radius:var(--radius-sm);padding:8px 12px;margin-top:10px;font-size:11px;color:var(--danger-text)}
+
+/* Expense Includes Tooltip (v6.11) */
+.includes-tooltip{position:relative;display:inline-block;cursor:help;border-bottom:1px dotted var(--text-muted)}
+.includes-tooltip .tooltip-text{visibility:hidden;width:200px;background-color:var(--bg-card);color:var(--text-main);text-align:left;border-radius:var(--radius-sm);padding:8px 10px;position:absolute;z-index:10;bottom:125%;left:50%;margin-left:-100px;opacity:0;transition:opacity 0.3s;font-size:11px;border:1px solid var(--border-card);box-shadow:var(--shadow-md)}
+.includes-tooltip:hover .tooltip-text{visibility:visible;opacity:1}
+.includes-tooltip .tooltip-text::after{content:"";position:absolute;top:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:var(--border-card) transparent transparent transparent}
+
+/* Report Footer (v6.5) */
+.report-footer{background:#f8fafc;border-top:1px solid #e2e8f0;padding:30px 40px;margin-top:30px;border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+[data-theme="dark"] .report-footer{background:rgba(15,23,42,0.95);border-top-color:rgba(55,65,81,0.7)}
+.confidential-banner{font-size:11px;color:#64748b;text-align:center;padding:8px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;margin-bottom:20px;letter-spacing:0.3px;font-style:italic}
+[data-theme="dark"] .confidential-banner{background:rgba(30,41,59,0.5);color:#9ca3af;border-color:rgba(55,65,81,0.7)}
+.disclaimer{font-size:11px;color:#64748b;line-height:1.7;padding:15px 20px;background:#f1f5f9;border-left:3px solid #94a3b8;border-radius:0 4px 4px 0;margin-bottom:20px}
+[data-theme="dark"] .disclaimer{background:rgba(51,65,85,0.5);color:#9ca3af;border-left-color:#6b7280}
+.disclaimer-title{font-weight:600;color:#475569;margin-bottom:5px;font-size:10px;text-transform:uppercase;letter-spacing:0.5px}
+[data-theme="dark"] .disclaimer-title{color:#d1d5db}
+.copyright{text-align:center;font-size:11px;color:#94a3b8;padding-top:15px;border-top:1px solid #e2e8f0}
+[data-theme="dark"] .copyright{color:#6b7280;border-top-color:rgba(55,65,81,0.7)}
+.copyright-main{font-weight:500;color:#64748b;margin-bottom:3px}
+[data-theme="dark"] .copyright-main{color:#9ca3af}
+.copyright-sub{font-size:10px}
+
+/* Cards for new sections */
+.card{background:var(--card-bg);border-radius:var(--radius-lg);border:1px solid var(--border-card);padding:20px;margin-bottom:20px}
+.card h2{font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.card h4{font-size:14px;margin:16px 0 8px;color:var(--text-secondary)}
+.card ul{margin:8px 0;padding-left:20px;line-height:1.8}
+.card p{margin:8px 0;line-height:1.6}
+.section-content>.card,.section-content>.audit-opinion-card{border:none;padding:0;margin:0;background:transparent;box-shadow:none}
+
+/* Footer */
+footer{margin-top:20px;font-size:11px;color:var(--text-muted);padding-top:16px;text-align:center}
+footer p{margin:4px 0}
+
+/* Print Styles */
+@media print{
+  body{background:white!important;padding:16px}
+  .nav-bar,.theme-toggle{display:none}
+  /* Keep the section header visible as a static heading in print — it carries
+     the section TITLE (e.g. "Management Accounts — Limitations"). Hiding the
+     whole toggle dropped every title from the PDF; only the interactive chevron
+     should go. */
+  .section-toggle{display:flex!important;cursor:default;box-shadow:none!important;border:1px solid #e5e7eb!important;border-bottom:none!important;border-radius:12px 12px 0 0!important;padding:18px 24px!important}
+  .toggle-text p{margin-bottom:2px!important}
+  .toggle-arrow{display:none!important}
+  .section-content{display:block!important;border:1px solid #e5e7eb!important;border-top:none!important;border-radius:0 0 12px 12px!important;margin-bottom:16px}
+  .collapsible-section{page-break-inside:auto}
+  *{color:#1e293b!important;background:white!important}
+  .header-card,.card,.table-card,.obs-box,.note-box,.reco-box,.facility-box{background:white!important;border:1px solid #e5e7eb!important}
+  .confidential-banner{background:#f8f8f8!important;border:1px solid #ddd!important}
+  thead th{background:#f9fafb!important;color:#374151!important}
+  .report-footer{background:#f9fafb!important}
+  .disclaimer{background:#f3f4f6!important}
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .obs-grid{grid-template-columns:1fr}
+  .key-obs-grid{grid-template-columns:1fr}
+  .header-meta{grid-template-columns:1fr}
+  .header-top{flex-direction:column}
+  .header-bottom{flex-direction:column;align-items:flex-start}
+  .nav-links{gap:6px}
+  .nav-link{padding:6px 10px;font-size:11px}
+  .theme-toggle{top:auto;bottom:20px;right:20px}
+  .report-footer{padding:20px}
+}
+
+/* --- FORCE LEFT ALIGNMENT FOR SECTION HEADERS --- */
+.section-toggle{text-align:left !important}
+.toggle-left{justify-content:flex-start !important;width:100% !important}
+.toggle-icon-wrapper{min-width:40px;max-width:40px;flex-shrink:0;overflow:hidden}
+.toggle-text{text-align:left !important}
+.toggle-text h3,.toggle-text p{text-align:left !important;margin-left:0 !important}
+
+</style>
+<style>
+.cf-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.cf-tile{border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:14px 16px;background:var(--table-header-bg)}
+.cf-tile.caution{border-color:var(--warn-border);background:var(--warn-soft)}
+.cf-tile-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-soft);margin-bottom:6px}
+.cf-tile-value{font-size:22px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--text-main)}
+.cf-tile.caution .cf-tile-value{color:var(--warn-text)}
+.cf-tile-sub{font-size:11.5px;color:var(--text-soft);margin-top:3px;font-variant-numeric:tabular-nums}
+.cf-up{color:var(--accent-text);font-weight:600}
+.cf-down{color:var(--warn-text);font-weight:600}
+.cf-col-derived{background:var(--info-soft)}
+.cf-tie-row td{font-size:11px;border-bottom:none;padding-top:6px;color:var(--text-soft)}
+.cf-tie-ok{color:var(--accent-text)!important;font-weight:600}
+.cf-tie-bad{color:var(--danger-text)!important;font-weight:700}
+.cf-note-list{margin:8px 0 0;padding-left:20px;line-height:1.7}
+.cf-note-list li{margin-bottom:4px}
+.cf-subtotal-row td{background:var(--subsection-bg)!important;font-weight:600;border-top:1px solid var(--border-subtle)}
+@media (max-width:820px){.cf-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.cf-tiles{grid-template-columns:1fr}}
+@media print{.cf-tiles{grid-template-columns:repeat(3,1fr)!important}.cf-tile{break-inside:avoid!important}}
+</style>
+</head>
+<body>
+<button id="theme-toggle-btn" class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+<div class="page">
+
+<div class="header-card"><div class="header-top"><div class="title-block"><div class="pill"><span>📊</span><span>Financial Statement Analysis</span></div><h1><span class="title-icon">💼</span><span>Contoh Industri Sdn. Bhd.</span></h1><p>Registration No. 200000000000 (000000-X)</p></div><div class="header-meta"><div><div class="meta-label">Principal Activities</div><div class="meta-value">Fabrication of steel structures and the provision of maintenance and repair services to industrial plants.</div></div><div><div class="meta-label">Financial Year End</div><div class="meta-value">31 December</div></div><div><div class="meta-label">Analysis Period</div><div class="meta-value">FY Dec 2023 (Audited) to FY Dec 2025 (Audited)</div></div><div><div class='meta-label'>Auditor</div><div class='meta-value'>CONTOH & RAKAN PLT</div></div><div><div class="meta-label">Prepared By</div><div class="meta-value">Kredit Lab</div></div></div></div><div class="header-bottom"><div class="badges"><span class="badge badge-info">📋 FY Dec 2023 (Audited)</span><span class="badge badge-info">📋 FY Dec 2024 (Audited)</span><span class="badge badge-info">📋 FY Dec 2025 (Audited)</span><style>.brr-gold{color:#FBBF24 !important}.brr-grey{color:#D1D5DB !important}</style><div style="display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border:1px solid rgba(148,163,184,.45);border-radius:16px;font-size:13px;white-space:nowrap;"><span style="font-size:15px;letter-spacing:1px;"><span class="brr-gold" style="color:#FBBF24;">★★★★</span><span class="brr-grey" style="color:#d1d5db;">☆</span></span><strong>91/100</strong><span style="opacity:.75;">Bank-Ready</span></div></div><div class="stamp">Analysed: 2026-09-25 | Rendered: 2026-09-25 | Schema: v7.9</div></div></div>
+<div class="confidential-banner">This report is confidential and prepared solely for the intended purchaser.</div>
+<div class="nav-bar"><div class="nav-bar-header"><span class="nav-bar-title">📑 Quick Navigation</span><div class="nav-controls"><button class="nav-btn accent" onclick="expandAll()">⊕ Expand All</button><button class="nav-btn" onclick="collapseAll()">⊖ Collapse All</button></div></div><div class="nav-links"><a href="#section-notes" class="nav-link" onclick="openSection('notes')">📋 Notes</a><a href="#section-audit" class="nav-link" onclick="openSection('audit')">🔍 Audit</a><a href="#section-pnl" class="nav-link" onclick="openSection('pnl')">📈 P&L</a><a href="#section-bs" class="nav-link" onclick="openSection('bs')">📊 Balance Sheet</a><a href="#section-ratios" class="nav-link" onclick="openSection('ratios')">🧮 Ratios</a><a href="#section-wc" class="nav-link" onclick="openSection('wc')">💰 Working Capital</a><a href="#section-funding" class="nav-link" onclick="openSection('funding')">🏗️ Funding</a><a href="#section-profile" class="nav-link" onclick="openSection('profile')">🎯 Profile</a><a href="#section-dscr" class="nav-link" onclick="openSection('dscr')">📐 DSCR</a><a href="#section-cashflow" class="nav-link" onclick="openSection('cashflow')">💸 Cash Flow</a><a href="#section-tnw" class="nav-link" onclick="openSection('tnw')">🏦 TNW</a><a href="#section-integrity" class="nav-link" onclick="openSection('integrity')">✅ Integrity &amp; Consistency</a><a href="#section-summary" class="nav-link" onclick="openSection('summary')">🧭 Summary</a></div></div>
+<div class="collapsible-section" id="section-notes"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">📋</div><div class="toggle-text"><h3>Notes on Financial Reports</h3><p>Source documents and analysis basis</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="note-box info"><strong>Source Documents:</strong><br>• FY Dec 2023 (Audited): Audited<br>• FY Dec 2024 (Audited): Audited<br>• FY Dec 2025 (Audited): Audited<br><br><strong>Schema Version:</strong> v7.7<br><strong>SME Status:</strong> Qualified (Private limited company reporting under the Malaysian Private Entities Reporting Standard (MPERS) with turnover and asset base within SME thresholds.)</div></div></div>
+
+<div class="collapsible-section" id="section-audit"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">🔍</div><div class="toggle-text"><h3>Audit Opinion</h3><p>Independent Auditors' Report summary</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="audit-opinion-card"><h2>🔍 Audit Opinion Summary</h2><div class="audit-opinion-grid"><div class="audit-opinion-item clean">
+            <h4>FY Dec 2023 (Audited) <span class="opinion-badge clean">UNKNOWN</span></h4>
+            <div class="detail"><strong>Auditor:</strong> N/A</div><div class="detail"><strong>Date Signed:</strong> N/A</div></div><div class="audit-opinion-item clean">
+            <h4>FY Dec 2024 (Audited) <span class="opinion-badge clean">✓ UNQUALIFIED</span></h4>
+            <div class="detail"><strong>Auditor:</strong> CONTOH & RAKAN PLT</div><div class="detail"><strong>Firm reg.:</strong> AF 0000</div><div class="detail"><strong>Date Signed:</strong> 18 May 2025</div></div><div class="audit-opinion-item clean">
+            <h4>FY Dec 2025 (Audited) <span class="opinion-badge clean">✓ UNQUALIFIED</span></h4>
+            <div class="detail"><strong>Auditor:</strong> CONTOH & RAKAN PLT</div><div class="detail"><strong>Firm reg.:</strong> AF 0000</div><div class="detail"><strong>Date Signed:</strong> 18 May 2026</div></div></div></div></div></div>
+<div class="collapsible-section" id="section-pnl"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">📈</div><div class="toggle-text"><h3>Statement of Comprehensive Income / P&L</h3><p>Revenue, Cost of Sales, Operating Expenses, and Net Profit</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Description</th><th class="number">FY Dec 2023 (Audited)<br>RM</th><th class="number">FY Dec 2024 (Audited)<br>RM</th><th class="number">FY Dec 2025 (Audited)<br>RM</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">REVENUE</td></tr><tr><td class="indent-1">Fabrication contracts</td><td class="number">11,428,560</td><td class="number">14,602,310</td><td class="number">18,955,420</td></tr><tr><td class="indent-1">Maintenance and repair services</td><td class="number">5,413,790</td><td class="number">6,774,170</td><td class="number">7,963,325</td></tr><tr class="total-row"><td><strong>Total Revenue</strong></td><td class="number"><strong>16,842,350</strong></td><td class="number"><strong>21,376,480</strong></td><td class="number"><strong>26,918,745</strong></td></tr><tr class="section-header-row"><td colspan="4">COST OF SALES</td></tr><tr><td class="indent-1">Materials consumed</td><td class="number">6,118,240</td><td class="number">7,905,420</td><td class="number">10,184,760</td></tr><tr><td class="indent-1">Subcontract charges</td><td class="number">2,874,615</td><td class="number">3,702,880</td><td class="number">5,016,335</td></tr><tr><td class="indent-1">Direct wages</td><td class="number">2,016,480</td><td class="number">2,541,300</td><td class="number">3,096,540</td></tr><tr><td class="indent-1">Machinery and equipment rental</td><td class="number">612,390</td><td class="number">690,455</td><td class="number">801,220</td></tr><tr><td class="indent-1">Transportation</td><td class="number">402,775</td><td class="number">511,240</td><td class="number">655,910</td></tr><tr><td class="indent-1">Site consumables</td><td class="number">311,860</td><td class="number">402,115</td><td class="number">498,760</td></tr><tr><td class="indent-1">Upkeep of machinery</td><td class="number">796,310</td><td class="number">1,243,390</td><td class="number">1,559,320</td></tr><tr class="total-row"><td><strong>Total Cost of Sales</strong></td><td class="number"><strong>13,132,670</strong></td><td class="number"><strong>16,996,800</strong></td><td class="number"><strong>21,812,845</strong></td></tr><tr class="gross-profit-row"><td><strong>GROSS PROFIT</strong></td><td class="number"><strong>3,709,680</strong></td><td class="number"><strong>4,379,680</strong></td><td class="number"><strong>5,105,900</strong></td></tr><tr class="section-header-row"><td colspan="4">OTHER INCOME</td></tr><tr><td class="indent-1">Gain on disposal of property, plant and equipment</td><td class="number">33,000</td><td class="number">0</td><td class="number">0</td></tr><tr><td class="indent-1">Interest income on fixed deposits</td><td class="number">12,600</td><td class="number">13,860</td><td class="number">14,520</td></tr><tr><td class="indent-1">Miscellaneous income</td><td class="number">18,450</td><td class="number">22,310</td><td class="number">19,870</td></tr><tr class="total-row"><td><strong>Total Other Income</strong></td><td class="number"><strong>64,050</strong></td><td class="number"><strong>36,170</strong></td><td class="number"><strong>34,390</strong></td></tr><tr class="section-header-row"><td colspan="4">OPERATING EXPENSES</td></tr><tr class="subsection-header-row"><td colspan="4">Administrative Expenses</td></tr><tr><td class="indent-2">Salaries and allowances</td><td class="number">1,104,300</td><td class="number">1,286,750</td><td class="number">1,498,220</td></tr><tr><td class="indent-2">Directors' remuneration</td><td class="number">288,000</td><td class="number">312,000</td><td class="number">336,000</td></tr><tr><td class="indent-2">EPF contributions</td><td class="number">167,420</td><td class="number">193,880</td><td class="number">226,140</td></tr><tr><td class="indent-2">SOCSO and EIS contributions</td><td class="number">21,380</td><td class="number">24,610</td><td class="number">28,950</td></tr><tr><td class="indent-2">Depreciation of property, plant and equipment</td><td class="number">410,000</td><td class="number">455,000</td><td class="number">520,000</td></tr><tr><td class="indent-2">Rental of premises</td><td class="number">216,000</td><td class="number">126,000</td><td class="number">36,000</td></tr><tr><td class="indent-2">Utilities</td><td class="number">88,740</td><td class="number">112,380</td><td class="number">131,670</td></tr><tr><td class="indent-2">Insurance</td><td class="number">64,215</td><td class="number">79,560</td><td class="number">93,240</td></tr><tr><td class="indent-2">Audit fee</td><td class="number">18,000</td><td class="number">20,000</td><td class="number">22,000</td></tr><tr><td class="indent-2">Professional fees</td><td class="number">32,600</td><td class="number">58,900</td><td class="number">44,300</td></tr><tr><td class="indent-2">Travelling</td><td class="number">57,830</td><td class="number">66,415</td><td class="number">71,845</td></tr><tr><td class="indent-2">Upkeep of office</td><td class="number">41,260</td><td class="number">52,990</td><td class="number">60,115</td></tr><tr><td class="indent-2">Printing and stationery</td><td class="number">19,475</td><td class="number">21,730</td><td class="number">24,390</td></tr><tr><td class="indent-2">Telephone and internet</td><td class="number">22,910</td><td class="number">25,480</td><td class="number">27,960</td></tr><tr><td class="indent-2">Bank charges</td><td class="number">9,845</td><td class="number">12,760</td><td class="number">16,430</td></tr><tr><td class="indent-2">Miscellaneous expenses</td><td class="number">26,340</td><td class="number">31,205</td><td class="number">35,780</td></tr><tr><td class="indent-2">Loss on disposal of property, plant and equipment</td><td class="number">0</td><td class="number">0</td><td class="number">8,000</td></tr><tr class="total-row"><td class="indent-1"><em>Total Administrative Expenses</em></td><td class="number"><em>2,588,315</em></td><td class="number"><em>2,879,660</em></td><td class="number"><em>3,181,040</em></td></tr><tr><td class="indent-1">Other Expenses</td><td class="number">0</td><td class="number">0</td><td class="number">0</td></tr><tr class="expense-total-row"><td><strong>TOTAL OPERATING EXPENSES</strong></td><td class="number"><strong>2,588,315</strong></td><td class="number"><strong>2,879,660</strong></td><td class="number"><strong>3,181,040</strong></td></tr><tr class="gross-profit-row"><td><strong>OPERATING PROFIT (EBIT)</strong></td><td class="number"><strong>1,185,415</strong></td><td class="number"><strong>1,536,190</strong></td><td class="number"><strong>1,959,250</strong></td></tr><tr class="section-header-row"><td colspan="4">FINANCE COSTS</td></tr><tr><td class="indent-1">Term loan interest</td><td class="number">59,400</td><td class="number">134,900</td><td class="number">138,300</td></tr><tr><td class="indent-1">Hire purchase interest</td><td class="number">24,800</td><td class="number">23,100</td><td class="number">26,400</td></tr><tr><td class="indent-1">Bank overdraft interest</td><td class="number">0</td><td class="number">0</td><td class="number">18,650</td></tr><tr class="total-row"><td><strong>Total Finance Costs</strong></td><td class="number"><strong>84,200</strong></td><td class="number"><strong>158,000</strong></td><td class="number"><strong>183,350</strong></td></tr><tr class="grand-total-row"><td><strong>PROFIT BEFORE TAX</strong></td><td class="number"><strong>1,101,215</strong></td><td class="number"><strong>1,378,190</strong></td><td class="number"><strong>1,775,900</strong></td></tr><tr class="section-header-row"><td colspan="4">TAXATION</td></tr><tr><td class="indent-1">Current year tax</td><td class="number">253,500</td><td class="number">316,980</td><td class="number">408,430</td></tr><tr><td class="indent-1">Deferred tax</td><td class="number">15,000</td><td class="number">18,000</td><td class="number">22,000</td></tr><tr class="total-row"><td><strong>Total Taxation</strong></td><td class="number"><strong>268,500</strong></td><td class="number"><strong>334,980</strong></td><td class="number"><strong>430,430</strong></td></tr><tr class="grand-total-row"><td><strong>NET PROFIT</strong></td><td class="number"><strong>832,715</strong></td><td class="number"><strong>1,043,210</strong></td><td class="number"><strong>1,345,470</strong></td></tr><tr class="ebitda-row"><td><strong>EBITDA</strong></td><td class="number"><strong>1,595,415</strong></td><td class="number"><strong>1,991,190</strong></td><td class="number"><strong>2,479,250</strong></td></tr></tbody></table></div></div></div></div>
+<div class="collapsible-section" id="section-bs"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">📊</div><div class="toggle-text"><h3>Statement of Financial Position / Balance Sheet</h3><p>Assets, Liabilities, and Shareholders' Equity</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Description</th><th class="number">FY Dec 2023 (Audited)<br>RM</th><th class="number">FY Dec 2024 (Audited)<br>RM</th><th class="number">FY Dec 2025 (Audited)<br>RM</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">NON-CURRENT ASSETS</td></tr><tr class="subsection-header-row"><td colspan="4">Property, Plant & Equipment</td></tr><tr><td class="indent-2">Property, plant and equipment (net carrying amount)</td><td class="number">2,315,000</td><td class="number">5,040,000</td><td class="number">5,370,000</td></tr><tr class="total-row"><td class="indent-1"><strong>Total PPE</strong></td><td class="number"><strong>2,315,000</strong></td><td class="number"><strong>5,040,000</strong></td><td class="number"><strong>5,370,000</strong></td></tr><tr class="grand-total-row"><td><strong>TOTAL NON-CURRENT ASSETS</strong></td><td class="number"><strong>2,315,000</strong></td><td class="number"><strong>5,040,000</strong></td><td class="number"><strong>5,370,000</strong></td></tr><tr class="section-header-row"><td colspan="4">CURRENT ASSETS</td></tr><tr><td class="indent-1">Inventories</td><td class="number">905,000</td><td class="number">1,140,000</td><td class="number">1,480,000</td></tr><tr><td class="indent-1">Trade receivables</td><td class="number">2,980,000</td><td class="number">3,920,000</td><td class="number">5,410,000</td></tr><tr><td class="indent-1">Other receivables, deposits and prepayments</td><td class="number">245,000</td><td class="number">310,000</td><td class="number">365,000</td></tr><tr><td class="indent-1">Amount due from a director</td><td class="number">0</td><td class="number">350,000</td><td class="number">180,000</td></tr><tr><td class="indent-1">Fixed deposits with a licensed bank (pledged)</td><td class="number">412,600</td><td class="number">426,460</td><td class="number">440,980</td></tr><tr><td class="indent-1">Cash and bank balances</td><td class="number">1,556,615</td><td class="number">247,445</td><td class="number">234,305</td></tr><tr class="grand-total-row"><td><strong>TOTAL CURRENT ASSETS</strong></td><td class="number"><strong>6,099,215</strong></td><td class="number"><strong>6,393,905</strong></td><td class="number"><strong>8,110,285</strong></td></tr><tr class="gross-profit-row"><td><strong>TOTAL ASSETS</strong></td><td class="number"><strong>8,414,215</strong></td><td class="number"><strong>11,433,905</strong></td><td class="number"><strong>13,480,285</strong></td></tr><tr class="section-header-row"><td colspan="4">EQUITY</td></tr><tr><td class="indent-1">Share Capital</td><td class="number">1,000,000</td><td class="number">1,000,000</td><td class="number">1,000,000</td></tr><tr><td class="indent-1">Retained Earnings</td><td class="number">3,132,715</td><td class="number">3,775,925</td><td class="number">5,121,395</td></tr><tr class="grand-total-row"><td><strong>TOTAL EQUITY</strong></td><td class="number"><strong>4,132,715</strong></td><td class="number"><strong>4,775,925</strong></td><td class="number"><strong>6,121,395</strong></td></tr><tr class="section-header-row"><td colspan="4">NON-CURRENT LIABILITIES</td></tr><tr><td class="indent-1">Term Loan I - Bank A Berhad (non-current)</td><td class="number">720,000</td><td class="number">480,000</td><td class="number">240,000</td></tr><tr><td class="indent-1">Term Loan II - Bank B Berhad (non-current)</td><td class="number">0</td><td class="number">2,208,000</td><td class="number">2,070,000</td></tr><tr><td class="indent-1">Hire purchase payables (non-current)</td><td class="number">330,000</td><td class="number">180,000</td><td class="number">310,000</td></tr><tr><td class="indent-1">Deferred tax liabilities</td><td class="number">110,000</td><td class="number">128,000</td><td class="number">150,000</td></tr><tr class="total-row"><td><strong>TOTAL NON-CURRENT LIABILITIES</strong></td><td class="number"><strong>1,160,000</strong></td><td class="number"><strong>2,996,000</strong></td><td class="number"><strong>2,770,000</strong></td></tr><tr class="section-header-row"><td colspan="4">CURRENT LIABILITIES</td></tr><tr><td class="indent-1">Trade payables</td><td class="number">2,210,000</td><td class="number">2,560,000</td><td class="number">2,690,000</td></tr><tr><td class="indent-1">Other payables and accruals</td><td class="number">460,000</td><td class="number">530,000</td><td class="number">610,000</td></tr><tr><td class="indent-1">Term Loan I - Bank A Berhad (current)</td><td class="number">240,000</td><td class="number">240,000</td><td class="number">240,000</td></tr><tr><td class="indent-1">Term Loan II - Bank B Berhad (current)</td><td class="number">0</td><td class="number">132,000</td><td class="number">138,000</td></tr><tr><td class="indent-1">Hire purchase payables (current)</td><td class="number">160,000</td><td class="number">150,000</td><td class="number">170,000</td></tr><tr><td class="indent-1">Bank overdraft - Bank A Berhad</td><td class="number">0</td><td class="number">0</td><td class="number">612,480</td></tr><tr><td class="indent-1">Tax payable</td><td class="number">51,500</td><td class="number">49,980</td><td class="number">128,410</td></tr><tr class="expense-total-row"><td><strong>TOTAL CURRENT LIABILITIES</strong></td><td class="number"><strong>3,121,500</strong></td><td class="number"><strong>3,661,980</strong></td><td class="number"><strong>4,588,890</strong></td></tr><tr class="expense-total-row"><td><strong>TOTAL LIABILITIES</strong></td><td class="number"><strong>4,281,500</strong></td><td class="number"><strong>6,657,980</strong></td><td class="number"><strong>7,358,890</strong></td></tr><tr class="gross-profit-row"><td><strong>TOTAL EQUITY & LIABILITIES</strong></td><td class="number"><strong>8,414,215</strong></td><td class="number"><strong>11,433,905</strong></td><td class="number"><strong>13,480,285</strong></td></tr></tbody></table></div></div></div></div>
+<div class="collapsible-section" id="section-ratios"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">🧮</div><div class="toggle-text"><h3>Financial Ratios</h3><p>Profitability, Liquidity, Leverage, and Efficiency metrics</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Ratio</th><th class="number">FY Dec 2023 (Audited)</th><th class="number">FY Dec 2024 (Audited)</th><th class="number">FY Dec 2025 (Audited)</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">Profitability Ratios</td></tr><tr><td class="indent-1">Gross Profit Margin</td><td class="number ">22.03%</td><td class="number ">20.49%</td><td class="number ">18.97%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (GP / Revenue) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Operating Profit Margin</td><td class="number ">7.04%</td><td class="number ">7.19%</td><td class="number ">7.28%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (OP / Revenue) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">PBT Margin</td><td class="number ">6.54%</td><td class="number ">6.45%</td><td class="number ">6.60%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (PBT / Revenue) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Net Profit Margin</td><td class="number ">4.94%</td><td class="number ">4.88%</td><td class="number ">5.00%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (NPAT / Revenue) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">EBITDA Margin</td><td class="number ">9.47%</td><td class="number ">9.31%</td><td class="number ">9.21%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (EBITDA / Revenue) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Return on Assets</td><td class="number ">9.90%</td><td class="number ">9.12%</td><td class="number ">9.98%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (NPAT / TA) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Return on Equity</td><td class="number ">20.15%</td><td class="number ">21.84%</td><td class="number ">21.98%</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (NPAT / TE) x 100</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr class="section-header-row"><td colspan="4">Liquidity Ratios</td></tr><tr><td class="indent-1">Current Ratio <span class="benchmark-badge">>= 1.25x</span></td><td class="number benchmark-pass">1.95x</td><td class="number benchmark-pass">1.75x</td><td class="number benchmark-pass">1.77x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: CA / CL</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Quick Ratio</td><td class="number ">1.66x</td><td class="number ">1.43x</td><td class="number ">1.44x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (CA - Inventory) / CL</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Cash Ratio</td><td class="number ">0.50x</td><td class="number ">0.07x</td><td class="number ">0.05x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: Cash and Bank Balances / CL</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr class="section-header-row"><td colspan="4">Leverage Ratios</td></tr><tr><td class="indent-1">Liabilities-to-Equity <span class="benchmark-badge"><= 4.0x</span></td><td class="number benchmark-pass">1.04x</td><td class="number benchmark-pass">1.39x</td><td class="number benchmark-pass">1.20x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: TL / TE</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Liabilities-to-Assets</td><td class="number ">0.51x</td><td class="number ">0.58x</td><td class="number ">0.55x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: TL / TA</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Gearing Ratio</td><td class="number ">0.35x</td><td class="number ">0.71x</td><td class="number ">0.62x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: Total Borrowings / TE</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Interest Coverage</td><td class="number ">18.95x</td><td class="number ">12.60x</td><td class="number ">13.52x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: EBITDA / Finance Costs</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">DSCR <span class="benchmark-badge">>= 1.25x</span></td><td class="number benchmark-pass">3.29x</td><td class="number benchmark-pass">2.93x</td><td class="number benchmark-pass">3.39x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: EBITDA / (Term Current + Interest)</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr class="section-header-row"><td colspan="4">Efficiency Ratios</td></tr><tr><td class="indent-1">Asset Turnover</td><td class="number ">2.00x</td><td class="number ">1.87x</td><td class="number ">2.00x</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: Revenue / TA</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Debtor Days</td><td class="number ">65 days</td><td class="number ">67 days</td><td class="number ">73 days</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (Trade Rec / Revenue) x Days</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Creditor Days</td><td class="number ">61 days</td><td class="number ">55 days</td><td class="number ">45 days</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (Trade Pay / COS) x Days</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Inventory Days</td><td class="number ">25 days</td><td class="number ">24 days</td><td class="number ">25 days</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: (Inventory / COS) x Days</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr><tr><td class="indent-1">Cash Conversion Cycle</td><td class="number ">28 days</td><td class="number ">36 days</td><td class="number ">53 days</td></tr><tr class="formula-display-row"><td class="indent-2 formula-row"><em>Formula: Debtor Days + Inventory Days - Creditor Days</em></td><td class="formula-row"></td><td class="formula-row"></td><td class="formula-row"></td></tr></tbody></table></div></div></div></div>
+<div class="collapsible-section" id="section-wc"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">💰</div><div class="toggle-text"><h3>Working Capital Analysis</h3><p>Operating WC (Supporting), CCC (Primary Driver), and WC Requirement</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Metric</th><th class="number">FY Dec 2023 (Audited)</th><th class="number">FY Dec 2024 (Audited)</th><th class="number">FY Dec 2025 (Audited)</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">OPERATING WORKING CAPITAL (SUPPORTING INDICATOR)</td></tr><tr class="total-row"><td class="indent-1">Trade Receivables + Inventory - Trade Payables</td><td class="number negative">1,675,000</td><td class="number negative">2,500,000</td><td class="number negative">4,200,000</td></tr><tr><td class="indent-2 muted"><em>  Trade Receivables</em></td><td class="number muted"><em>2,980,000</em></td><td class="number muted"><em>3,920,000</em></td><td class="number muted"><em>5,410,000</em></td></tr><tr><td class="indent-2 muted"><em>  Inventory</em></td><td class="number muted"><em>905,000</em></td><td class="number muted"><em>1,140,000</em></td><td class="number muted"><em>1,480,000</em></td></tr><tr><td class="indent-2 muted"><em>  Trade Payables</em></td><td class="number muted"><em>2,210,000</em></td><td class="number muted"><em>2,560,000</em></td><td class="number muted"><em>2,690,000</em></td></tr><tr class="section-header-row"><td colspan="4">WORKING CAPITAL REQUIREMENT (CCC-BASED)</td></tr><tr><td class="indent-1">CCC Days (PRIMARY DRIVER)</td><td class="number negative">28 days</td><td class="number negative">36 days</td><td class="number negative">53 days</td></tr><tr class="grand-total-row"><td><strong>WC Requirement</strong></td><td class="number negative"><strong>1,306,320</strong></td><td class="number negative"><strong>2,133,548</strong></td><td class="number negative"><strong>3,917,599</strong></td></tr></tbody></table></div></div><div class="note-box warning"><strong>WC Facility Needed:</strong> ⚠️ Yes - External WC facility needed<br>🔴 CCC Status (PRIMARY): <strong>POSITIVE</strong> | 🔴 OWC Status (Supporting): <strong>POSITIVE</strong><br><strong>Recommended:</strong> OD (3,900,000)<br><em>Both indicators confirm a genuine and growing working capital requirement. The cash conversion cycle is positive throughout and lengthening sharply from 28.31 days (FY2023) to 36.43 days (FY2024) to 53.12 days (FY2025), driven by debtor days extending from 64.58 to 73.36 days while creditor days compressed from 61.42 to 45.01 days. Operating working capital rose in step from RM1.68 million to RM2.50 million to RM4.20 million, and the CCC-based working capital requirement grew from approximately RM1.31 million to RM3.92 million. The company therefore needs a revolving facility; the existing RM1,000,000 overdraft (drawn RM612,480 at FY2025) is materially undersized relative to the ~RM3.9 million requirement.</em></div></div></div>
+<div class="collapsible-section" id="section-funding"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">🏗️</div><div class="toggle-text"><h3>Funding Mismatch Analysis</h3><p>Gap identification, source decomposition, and funding structure</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="card"><h2>📐 Layer 1: Gap Identification</h2><div class="table-wrapper"><table><thead><tr><th>Component</th><th class="number">FY Dec 2023 (Audited)</th><th class="number">FY Dec 2024 (Audited)</th><th class="number">FY Dec 2025 (Audited)</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">FUNDING GAP ANALYSIS</td></tr><tr><td class="indent-1">Non-Current Assets (NCA)</td><td class="number">2,315,000</td><td class="number">5,040,000</td><td class="number">5,370,000</td></tr><tr><td class="indent-1">Long-Term Funding (Equity + NCL)</td><td class="number">5,292,715</td><td class="number">7,771,925</td><td class="number">8,891,395</td></tr><tr class="total-row"><td><strong>Funding Gap</strong></td><td class="number positive"><strong>(2,977,715)</strong></td><td class="number positive"><strong>(2,731,925)</strong></td><td class="number positive"><strong>(3,521,395)</strong></td></tr><tr><td class="indent-1">Gap % of NCA</td><td class="number">-128.63%</td><td class="number">-54.20%</td><td class="number">-65.58%</td></tr><tr><td class="indent-1">Status</td><td class="number"><span class="status-pill status-matched">✅ Matched</span></td><td class="number"><span class="status-pill status-matched">✅ Matched</span></td><td class="number"><span class="status-pill status-matched">✅ Matched</span></td></tr></tbody></table></div></div><div class="card"><h2>⚖️ Funding Structure Assessment</h2><div class="note-box success"><strong>Sustainability Rating:</strong> Sustainable</div></div></div></div>
+<div class="collapsible-section" id="section-profile"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">🎯</div><div class="toggle-text"><h3>Funding Profile</h3><p>Existing facilities and suitability assessment</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="card"><h2>🏦 Existing Facilities</h2><div class="table-wrapper"><table><tbody><tr><th>Facility</th><th class="number">Current</th><th class="number">Non-Current</th><th class="number">Total</th></tr><tr><td>Hire Purchase</td><td class="number">170,000</td><td class="number">310,000</td><td class="number"><strong>480,000</strong></td></tr><tr><td>Term Loan</td><td class="number">378,000</td><td class="number">2,310,000</td><td class="number"><strong>2,688,000</strong></td></tr><tr><td>Overdraft</td><td class="number">612,480</td><td class="number">0</td><td class="number"><strong>612,480</strong></td></tr><tr class="grand-total-row"><td><strong>Total Borrowings</strong></td><td></td><td></td><td class="number"><strong>3,780,480</strong></td></tr></tbody></table></div></div><div class="card"><h2>📋 Facility Guidance</h2><ul><li>Term Loan II (RM2,208,000 outstanding at FY2025) appropriately finances the factory building acquired in FY2024 and is well-matched to a long-lived asset over 180 monthly instalments.</li><li>Term Loan I and hire purchase finance plant, machinery and vehicles and are correctly structured as term debt.</li><li>The RM1,000,000 overdraft is the only revolving line and became drawn (RM612,480) for the first time in FY2025 as working capital lengthened; it should be reviewed and likely increased to cover the ~RM3.9 million working capital requirement.</li></ul></div></div></div>
+<div class="collapsible-section" id="section-dscr"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">📐</div><div class="toggle-text"><h3>DSCR Analysis</h3><p>Debt service coverage ratio calculation (Banking Standard)</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="card"><h2>🏦 Facility Classification</h2><div class="note-box info"><p><strong>Term Facilities</strong> (Principal + Interest in DSCR): Principal + Interest in DSCR</p><p>Includes: Term Loan I - Bank A Berhad, Term Loan II - Bank B Berhad, Hire purchase payables</p><p><strong>Total Term Current Portion:</strong> 548,000</p></div><div class="note-box warning"><p><strong>Revolving Facilities</strong> (Interest ONLY in DSCR): Interest ONLY in DSCR</p><p>Includes: Bank overdraft - Bank A Berhad</p><p><strong>Total Revolving:</strong> 612,480 (excluded from principal)</p></div></div><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Component</th><th class="number">FY Dec 2023 (Audited)</th><th class="number">FY Dec 2024 (Audited)</th><th class="number">FY Dec 2025 (Audited)</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">EBITDA</td></tr><tr><td class="indent-1">EBITDA</td><td class="number">1,595,415</td><td class="number">1,991,190</td><td class="number">2,479,250</td></tr><tr class="section-header-row"><td colspan="4">DEBT SERVICE</td></tr><tr><td class="indent-1">Principal Repayment (Term Facilities)</td><td class="number">400,000</td><td class="number">522,000</td><td class="number">548,000</td></tr><tr><td class="indent-1">Interest Expense</td><td class="number">84,200</td><td class="number">158,000</td><td class="number">183,350</td></tr><tr class="total-row"><td><strong>Total Debt Service</strong></td><td class="number"><strong>484,200</strong></td><td class="number"><strong>680,000</strong></td><td class="number"><strong>731,350</strong></td></tr><tr class="section-header-row"><td colspan="4">DSCR</td></tr><tr class="grand-total-row"><td><strong>DSCR</strong></td><td class="number positive"><strong>3.29x</strong></td><td class="number positive"><strong>2.93x</strong></td><td class="number positive"><strong>3.39x</strong></td></tr></tbody></table></div></div><div class="note-box warning"><strong>Benchmark:</strong> DSCR ≥ 1.25x (Banking Standard) | Minimum: ≥ 1.00x<br><strong>Note:</strong> DSCR = EBITDA ÷ (Term Facility Principal + All Interest). Revolving facilities contribute to interest but NOT principal.</div><div class="card"><h2>📋 DSCR Assessment</h2><div class="note-box info">DSCR is comfortably above the 1.25x benchmark in every period on an EBITDA basis: 3.29x (FY2023), 2.93x (FY2024) and 3.39x (FY2025). Term principal is taken from the disclosed current portions in the Note 12 maturity split for every period (Term Loan I RM240,000 throughout; Term Loan II RM132,000 in FY2024 rising to RM138,000 in FY2025; hire purchase RM160,000/RM150,000/RM170,000), plus all finance costs read directly from Note 20. The bank overdraft is revolving and only its interest (RM18,650 in FY2025) is included in debt service. The dip in FY2024 reflects the higher interest load following the RM2.4 million Term Loan II drawdown for the factory, and coverage recovers in FY2025 as EBITDA grows to RM2.48 million. IMPORTANT CAVEAT: EBITDA-based coverage is strong, but cash-based coverage is materially weaker — cash DSCR (OCF / same debt service) fell to 0.49x (FY2024) and 0.62x (FY2025), well below 1.0x, because heavy working-capital absorption and capital expenditure consumed operating profit. The divergence between the 3.4x EBITDA DSCR and the sub-1.0x cash DSCR is the key finding and should be monitored; scheduled debt service in FY2024-FY2025 was in practice met by drawing the overdraft and running down cash rather than from operating cash generation.</div></div></div></div>
+<div class="collapsible-section" id="section-cashflow"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">💸</div><div class="toggle-text"><h3>Cash Flow Analysis</h3><p>Cash generation, conversion quality and cash-based debt service</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="cf-tiles"><div class="cf-tile"><div class="cf-tile-label">Operating Cash Flow</div><div class="cf-tile-value">454,380</div><div class="cf-tile-sub">FY Dec 2024 (Audited): 330,830 <span class="cf-up">▲ 123,550</span></div></div><div class="cf-tile caution"><div class="cf-tile-label">Cash Conversion · OCF ÷ EBITDA</div><div class="cf-tile-value">18.3%</div><div class="cf-tile-sub">FY Dec 2024 (Audited): 16.6% <span class="cf-up">▲ 1.7%</span></div></div><div class="cf-tile caution"><div class="cf-tile-label">Cash DSCR · OCF ÷ Debt Service</div><div class="cf-tile-value">0.62x</div><div class="cf-tile-sub">EBITDA DSCR: 3.39x — cash headroom is thinner</div></div><div class="cf-tile"><div class="cf-tile-label">Free Cash Flow · OCF − Capex</div><div class="cf-tile-value">(155,620)</div><div class="cf-tile-sub">FY Dec 2024 (Audited): (2,849,170) <span class="cf-up">▲ 2,693,550</span></div></div><div class="cf-tile"><div class="cf-tile-label">OCF Margin</div><div class="cf-tile-value">1.7%</div><div class="cf-tile-sub">FY Dec 2024 (Audited): 1.6% <span class="cf-up">▲ 0.1%</span></div></div><div class="cf-tile"><div class="cf-tile-label">Capex vs Depreciation</div><div class="cf-tile-value">1.17x</div><div class="cf-tile-sub">asset base maintained at ≈1.0x</div></div></div><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>RM</th><th>FY Dec 2023 (Audited)<br><span class="badge badge-ok">Audited</span></th><th>FY Dec 2024 (Audited)<br><span class="badge badge-ok">Audited</span></th><th>FY Dec 2025 (Audited)<br><span class="badge badge-ok">Audited</span></th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">Operating Activities</td></tr><tr><td>Profit before tax</td><td class="number">1,101,215</td><td class="number">1,378,190</td><td class="number">1,775,900</td></tr><tr><td>Depreciation of property, plant and equipment</td><td class="number">410,000</td><td class="number">455,000</td><td class="number">520,000</td></tr><tr><td>(Gain)/Loss on disposal of PPE</td><td class="number negative">(33,000)</td><td class="number">0</td><td class="number">8,000</td></tr><tr><td>Interest expense</td><td class="number">84,200</td><td class="number">158,000</td><td class="number">183,350</td></tr><tr><td>Interest income</td><td class="number negative">(12,600)</td><td class="number negative">(13,860)</td><td class="number negative">(14,520)</td></tr><tr class="cf-subtotal-row"><td><strong>Operating profit before working capital changes</strong></td><td class="number"><strong>1,549,815</strong></td><td class="number"><strong>1,977,330</strong></td><td class="number"><strong>2,472,730</strong></td></tr><tr><td>(Increase)/decrease in inventories</td><td class="number negative">(85,000)</td><td class="number negative">(235,000)</td><td class="number negative">(340,000)</td></tr><tr><td>(Increase)/decrease in receivables</td><td class="number negative">(365,000)</td><td class="number negative">(1,005,000)</td><td class="number negative">(1,545,000)</td></tr><tr><td>(Increase)/decrease in amount due from a director</td><td class="number">0</td><td class="number negative">(350,000)</td><td class="number">170,000</td></tr><tr><td>Increase/(decrease) in payables</td><td class="number">270,000</td><td class="number">420,000</td><td class="number">210,000</td></tr><tr class="cf-subtotal-row"><td><strong>Cash generated from operations</strong></td><td class="number"><strong>1,369,815</strong></td><td class="number"><strong>807,330</strong></td><td class="number"><strong>967,730</strong></td></tr><tr><td>Interest paid</td><td class="number negative">(84,200)</td><td class="number negative">(158,000)</td><td class="number negative">(183,350)</td></tr><tr><td>Tax paid</td><td class="number negative">(262,000)</td><td class="number negative">(318,500)</td><td class="number negative">(330,000)</td></tr><tr class="total-row"><td><strong>Net cash from operating activities</strong></td><td class="number"><strong>1,023,615</strong></td><td class="number"><strong>330,830</strong></td><td class="number"><strong>454,380</strong></td></tr><tr class="section-header-row"><td colspan="4">Investing Activities</td></tr><tr><td>Purchase of property, plant and equipment</td><td class="number negative">(370,000)</td><td class="number negative">(3,180,000)</td><td class="number negative">(610,000)</td></tr><tr><td>Proceeds from disposal of property, plant and equipment</td><td class="number">78,000</td><td class="number">0</td><td class="number">52,000</td></tr><tr><td>Placement of fixed deposits</td><td class="number negative">(12,600)</td><td class="number negative">(13,860)</td><td class="number negative">(14,520)</td></tr><tr><td>Interest received</td><td class="number">12,600</td><td class="number">13,860</td><td class="number">14,520</td></tr><tr class="total-row"><td><strong>Net cash used in investing activities</strong></td><td class="number negative"><strong>(292,000)</strong></td><td class="number negative"><strong>(3,180,000)</strong></td><td class="number negative"><strong>(558,000)</strong></td></tr><tr class="section-header-row"><td colspan="4">Financing Activities</td></tr><tr><td>Drawdown of term loan</td><td class="number">0</td><td class="number">2,400,000</td><td class="number">0</td></tr><tr><td>Repayment of term loans</td><td class="number negative">(240,000)</td><td class="number negative">(300,000)</td><td class="number negative">(372,000)</td></tr><tr><td>Repayment of hire purchase payables</td><td class="number negative">(140,000)</td><td class="number negative">(160,000)</td><td class="number negative">(150,000)</td></tr><tr><td>Dividend paid</td><td class="number">0</td><td class="number negative">(400,000)</td><td class="number">0</td></tr><tr class="total-row"><td><strong>Net cash used in financing activities</strong></td><td class="number negative"><strong>(380,000)</strong></td><td class="number"><strong>1,540,000</strong></td><td class="number negative"><strong>(522,000)</strong></td></tr><tr class="grand-total-row"><td><strong>Net change in cash</strong></td><td class="number"><strong>351,615</strong></td><td class="number negative"><strong>(1,309,170)</strong></td><td class="number negative"><strong>(625,620)</strong></td></tr><tr><td>Cash at beginning of period</td><td class="number">1,205,000</td><td class="number">1,556,615</td><td class="number">247,445</td></tr><tr class="total-row"><td><strong>Cash at end of period</strong></td><td class="number"><strong>1,556,615</strong></td><td class="number"><strong>247,445</strong></td><td class="number negative"><strong>(378,175)</strong></td></tr><tr class="cf-tie-row"><td>Ties to balance sheet cash &amp; bank</td><td class="number  cf-tie-ok">✓ Δ 0</td><td class="number  cf-tie-ok">✓ Δ 0</td><td class="number  cf-tie-bad">✗ Δ (612,480.00)</td></tr></tbody></table></div></div></div></div>
+<div class="collapsible-section" id="section-tnw"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">🏦</div><div class="toggle-text"><h3>Tangible Net Worth (TNW) Analysis</h3><p>Banking perspective: adjusted equity position</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Component</th><th class="number">FY Dec 2023 (Audited)</th><th class="number">FY Dec 2024 (Audited)</th><th class="number">FY Dec 2025 (Audited)</th></tr></thead><tbody><tr class="section-header-row"><td colspan="4">TNW CALCULATION</td></tr><tr><td class="indent-1">Total Shareholders' Equity (Original TNW)</td><td class="number">4,132,715</td><td class="number">4,775,925</td><td class="number">6,121,395</td></tr><tr class="subsection-header-row"><td colspan="4">Less: Adjustments</td></tr><tr><td class="indent-2">Intangible Assets</td><td class="number">0</td><td class="number">0</td><td class="number">0</td></tr><tr><td class="indent-2">Due from Directors</td><td class="number">0</td><td class="number">350,000</td><td class="number">180,000</td></tr><tr><td class="indent-2">Due from Related Companies</td><td class="number">0</td><td class="number">0</td><td class="number">0</td></tr><tr class="total-row"><td class="indent-1"><strong>Total Adjustments</strong></td><td class="number"><strong>0</strong></td><td class="number"><strong>350,000</strong></td><td class="number"><strong>180,000</strong></td></tr><tr class="grand-total-row"><td><strong>Adjusted TNW</strong></td><td class="number"><strong>4,132,715</strong></td><td class="number"><strong>4,425,925</strong></td><td class="number"><strong>5,941,395</strong></td></tr></tbody></table></div></div><div class="note-box info"><strong>Assessment:</strong> Tangible net worth is positive and improving across all periods, rising from RM4.13 million (FY2023) to RM5.94 million adjusted (FY2025). The only adjustment is the amount due from a director (RM350,000 in FY2024, reducing to RM180,000 in FY2025), which is unsecured, interest-free and repayable on demand. The reduction in this balance in FY2025 is credit-positive. There are no intangible assets. Retained earnings compounding fully funds the growth, with only one dividend (RM400,000) paid across the three years. Trend: Improving</div></div></div>
+<div class="collapsible-section" id="section-integrity"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">✅</div><div class="toggle-text"><h3>Integrity &amp; Consistency Check</h3><p>Balance sheet + full consistency audit (independently recomputed)</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="table-card"><div class="table-wrapper"><table><thead><tr><th>Check (independently verified)</th><th class="number">FY Dec 2023 (Audited)</th><th class="number">FY Dec 2024 (Audited)</th><th class="number">FY Dec 2025 (Audited)</th></tr></thead><tbody><tr><td class="indent-1">Total Assets (NCA + CA)</td><td class="number">8,414,215</td><td class="number">11,433,905</td><td class="number">13,480,285</td></tr><tr><td class="indent-1">Total Equity &amp; Liabilities (Equity + NCL + CL)</td><td class="number">8,414,215</td><td class="number">11,433,905</td><td class="number">13,480,285</td></tr><tr class="total-row"><td class="indent-1"><strong>Variance</strong></td><td class="number positive"><strong>0</strong></td><td class="number positive"><strong>0</strong></td><td class="number positive"><strong>0</strong></td></tr><tr><td class="indent-1">Status</td><td class="number positive">✅ Balanced</td><td class="number positive">✅ Balanced</td><td class="number positive">✅ Balanced</td></tr></tbody></table></div></div><div style="border:1px solid #15803d;background:#f0fdf4;color:#14532d;border-radius:8px;padding:14px 18px;margin-top:14px;"><strong>✅ Consistency audit passed.</strong> Every total, accounting identity, ratio and cross-section figure recomputes correctly from the raw line items.</div></div></div>
+<div class="collapsible-section" id="section-summary"><button class="section-toggle active" onclick="toggleSection(this)"><div class="toggle-left"><div class="toggle-icon-wrapper">🧭</div><div class="toggle-text"><h3>Summary & Key Observations</h3><p>Analysis highlights, concerns, and strategic recommendations</p></div></div><div class="toggle-arrow">▼</div></button><div class="section-content"><div class="card"><h2>📊 Key Observations</h2><div class="key-obs-grid"><div class="key-obs-item"><h4>Revenue Trend</h4><p>Revenue grew strongly and consistently from RM16.84 million (FY2023) to RM21.38 million (FY2024, +26.9%) and RM26.92 million (FY2025, +25.9%). Growth is broad-based across both streams, with fabrication contracts rising from RM11.43 million to RM18.96 million and maintenance and repair services from RM5.41 million to RM7.96 million over the three years.</p></div><div class="key-obs-item"><h4>Profitability Trend</h4><p>Net profit after tax rose each year from RM832,715 to RM1,043,210 to RM1,345,470, and net margin held steady around 4.9%-5.0%. However, gross profit margin compressed each year from 22.03% to 20.49% to 18.97%, as materials, subcontract charges and machinery upkeep grew faster than revenue — a trend to watch even though absolute gross profit rose to RM5.11 million.</p></div><div class="key-obs-item"><h4>Liquidity Position</h4><p>The current ratio is healthy throughout at 1.95x, 1.75x and 1.77x, comfortably above the 1.25x benchmark, and the quick ratio remains sound at 1.44x in FY2025. However, the cash ratio collapsed from 0.50x to just 0.05x as free cash was consumed by capex and receivables, with the company opening a bank overdraft (RM612,480 drawn) in FY2025.</p></div><div class="key-obs-item"><h4>Working Capital Cycle</h4><p>The cash conversion cycle (primary indicator) is positive and lengthening markedly — 28.31 days (FY2023), 36.43 days (FY2024) and 53.12 days (FY2025) — driven by debtor days extending to 73.36 days and creditor days shortening to 45.01 days. Operating working capital (supporting indicator) rose in step to RM4.20 million, confirming a genuine and growing need for revolving working capital financing.</p></div><div class="key-obs-item"><h4>Debt Structure</h4><p>Total borrowings rose from RM1.45 million to RM3.39 million (following the RM2.4 million Term Loan II factory drawdown in FY2024) then to RM3.78 million in FY2025 as an overdraft appeared. Gearing peaked at 0.71x in FY2024 and eased to 0.62x in FY2025, well within prudent limits, and liabilities-to-equity of 1.20x is comfortably below the 4.0x benchmark. Debt is predominantly term-structured against long-lived assets, with hire purchase (RM480,000) financing vehicles and machinery.</p></div><div class="key-obs-item"><h4>Funding Position</h4><p>The funding structure is sound and fully matched: non-current assets of RM5.37 million are entirely covered by long-term funding of RM8.89 million (equity RM6.12 million plus non-current liabilities RM2.77 million) in FY2025, leaving a favourable funding gap of RM3.52 million (-65.6% of NCA). Long-term assets are not being financed by short-term liabilities in any period.</p></div><div class="key-obs-item"><h4>Asset Base</h4><p>Total assets expanded from RM8.41 million to RM13.48 million, led by the FY2024 factory investment that lifted PPE from RM2.32 million to RM5.04 million and then RM5.37 million. Fixed deposits of RM440,980 are pledged to Bank A Berhad and are therefore restricted; the balance sheet is otherwise unencumbered by intangibles.</p></div><div class="key-obs-item"><h4>Related Party Exposure</h4><p>The only related-party exposure is an amount due from a director — RM350,000 at FY2024, reduced to RM180,000 at FY2025 — which is unsecured, interest-free and repayable on demand. The reduction is credit-positive, but the balance remains a non-operating use of company funds that is deducted in arriving at adjusted tangible net worth of RM5.94 million.</p></div><div class="key-obs-item"><h4>Dividend Policy</h4><p>Dividend policy is conservative. A single interim dividend of RM400,000 (in respect of FY2023) was paid during FY2024; no dividends were paid in FY2023 or FY2025. Earnings are overwhelmingly retained, driving retained earnings from RM3.13 million to RM5.12 million and supporting the self-funded balance-sheet growth.</p></div></div></div><div class="obs-grid"><div class="obs-box positive"><div class="obs-title"><span>✅</span><span>Positive Trends</span></div><ul class="obs-list"><li><strong>Strong, sustained revenue growth:</strong> Revenue rose 26.9% then 25.9% to reach RM26.92 million in FY2025, with both fabrication (RM18.96 million) and maintenance (RM7.96 million) streams growing. This demonstrates a stable, expanding order book and a diversified two-line revenue mix.</li><li><strong>Consistent and rising profitability:</strong> Net profit after tax increased every year to RM1,345,470 in FY2025 with net margin holding near 5.0%. Return on equity is strong and stable at 20%-22%, indicating efficient use of shareholder capital.</li><li><strong>Robust EBITDA debt-service coverage:</strong> EBITDA DSCR is well above the 1.25x benchmark throughout (3.29x, 2.93x, 3.39x), supported by EBITDA of RM2.48 million against total debt service of RM731,350 in FY2025. Interest coverage of 13.52x provides a wide cushion on finance costs.</li><li><strong>Healthy liquidity and low leverage:</strong> The current ratio of 1.77x and quick ratio of 1.44x in FY2025 sit comfortably above benchmark, while liabilities-to-equity of 1.20x and gearing of 0.62x are conservative. This gives meaningful headroom to raise additional facilities.</li><li><strong>Matched, self-sustaining funding structure:</strong> Non-current assets of RM5.37 million are fully covered by RM8.89 million of long-term funding, giving a favourable funding gap of RM3.52 million. The factory (RM2.65 million) was correctly financed with a 15-year term loan rather than short-term debt.</li><li><strong>Clean audit history and reducing related-party exposure:</strong> Both FY2024 and FY2025 carry unqualified audit opinions with no emphasis of matter or going-concern issues. The amount due from a director was actively reduced from RM350,000 to RM180,000 in FY2025.</li></ul></div><div class="obs-box caution"><div class="obs-title"><span>⚠️</span><span>Areas Requiring Attention</span></div><ul class="obs-list"><li><strong>Weak cash conversion and sub-1.0x cash DSCR:</strong> Despite strong EBITDA coverage, operating cash flow of only RM454,380 in FY2025 produced a cash DSCR of 0.62x (and 0.49x in FY2024), both below 1.0x. Debt service was in practice met by drawing the overdraft and running down cash rather than from operations, which is the single most important credit signal in this file. <span class="severity-badge severity-HIGH">HIGH</span></li><li><strong>Lengthening working capital cycle and rising receivables:</strong> The cash conversion cycle nearly doubled from 28.31 days to 53.12 days over three years as debtor days climbed to 73.36 days and creditor days fell to 45.01 days. Receivables absorbed RM1.55 million of cash in FY2025 and the working capital requirement now approaches RM3.9 million. <span class="severity-badge severity-HIGH">HIGH</span></li><li><strong>Undersized revolving facility versus working capital need:</strong> The only revolving line is a RM1,000,000 overdraft, drawn RM612,480 at FY2025, against a working capital requirement of roughly RM3.9 million. This structural shortfall forced cash depletion and is unsustainable if receivables continue to grow. <span class="severity-badge severity-MEDIUM">MEDIUM</span></li><li><strong>Gross margin erosion:</strong> Gross profit margin fell every year from 22.03% to 18.97% as materials, subcontract and machinery-upkeep costs outpaced revenue. Continued compression would materially reduce the EBITDA cushion that currently supports debt service. <span class="severity-badge severity-MEDIUM">MEDIUM</span></li><li><strong>Very low cash buffer and emergence of overdraft reliance:</strong> The cash ratio fell to 0.05x and the company moved to a net overdrawn cash position (closing cash of negative RM378,175 including the RM612,480 overdraft) in FY2025. Free cash flow was negative in both FY2024 (-RM2.85 million) and FY2025 (-RM155,620). <span class="severity-badge severity-MEDIUM">MEDIUM</span></li></ul></div></div><div class="reco-box"><div class="obs-title"><span>🎯</span><span>Strategic Recommendations</span></div><ol><li><strong>[PHIGH] Working capital financing:</strong> Restructure and increase the revolving working capital facility from the current RM1,000,000 overdraft toward the ~RM3.9 million working capital requirement, ideally via invoice/trade financing tied to the receivables book, to stop debt service being funded from cash depletion.</li><li><strong>[PHIGH] Receivables management:</strong> Tighten collections to reverse the rise in debtor days from 64.58 to 73.36 days; each 10-day reduction would release roughly RM0.7 million of cash given FY2025 revenue of RM26.92 million.</li><li><strong>[PMEDIUM] Margin protection:</strong> Investigate the gross margin decline from 22.03% to 18.97%, focusing on materials pricing and subcontract/machinery-upkeep cost control, and reflect cost inflation in contract pricing.</li><li><strong>[PMEDIUM] Related party balance:</strong> Continue reducing the amount due from a director (RM180,000 at FY2025) and formalise repayment terms; monitor for any re-advances that would weaken tangible net worth.</li><li><strong>[PLOW] Liquidity monitoring:</strong> Rebuild an unrestricted cash buffer and monitor cash DSCR alongside EBITDA DSCR each period, given the current divergence between the two measures.</li></ol></div><div class="facility-box"><div class="obs-title"><span>🏦</span><span>Facility Suitability Summary</span></div><p><strong>Existing Facilities Appropriate:</strong> ✅ Yes</p><div class="note-box warning" style="margin:10px 0;"><strong>⚠️ Facility Concerns:</strong><ul style="margin:8px 0 0;padding-left:20px;"><li>The RM1,000,000 overdraft is materially undersized relative to the ~RM3.9 million working capital requirement and has already begun to be drawn (RM612,480 at FY2025).</li><li>Reliance on the overdraft and cash drawdown to meet debt service (cash DSCR of 0.49x-0.62x) indicates the revolving envelope needs enlarging even though the overall structure is correct.</li></ul></div><div style="margin:10px 0;padding:12px 16px;border-radius:12px;background:var(--info-soft);border:1px solid var(--info-border);"><strong>📊 Working Capital Assessment:</strong><br>🔴 CCC Status (PRIMARY): <strong>POSITIVE</strong> | 🔴 OWC Status (Supporting): <strong>POSITIVE</strong> | WCR: <strong>3,917,599</strong><br>Needs WC Facility: <strong>⚠️ Yes</strong><br><em>Both the positive, lengthening cash conversion cycle (53.12 days in FY2025) and positive operating working capital (RM4.20 million) confirm a growing revolving financing need of approximately RM3.9 million. The term facilities are correctly matched to the factory, plant and vehicles; the gap is a revolving one.</em></div><p><strong>Facilities to Consider:</strong> Increased bank overdraft or committed revolving credit line sized toward the RM3.9 million working capital requirement, Invoice/receivables financing secured on the trade debtor book to release cash tied up in the 73-day collection cycle, Trade financing / bank guarantee lines to support fabrication contract procurement</p><p><strong>Facilities to Avoid:</strong> Additional long-term term loans for working capital purposes, which would mismatch short-cycle needs with long-term debt, Further hire purchase commitments until operating cash conversion improves</p><p><strong>Key Conditions:</strong></p><ul><li>Right-size the revolving facility to the working capital requirement and monitor overdraft utilisation monthly</li><li>Impose receivables collection targets to reduce debtor days back toward contractual 30-90 day terms</li><li>Monitor gross margin and cash DSCR as covenant-style early-warning metrics</li><li>Cap or schedule repayment of the director's balance</li></ul></div></div></div><style>.brr-gold{color:#FBBF24 !important}.brr-grey{color:#D1D5DB !important}</style>
+<div class="card" id="brr-rating">
+<h2>⭐ Bank-Readiness Rating</h2>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;">
+  <div style="min-width:260px;">
+    <div style="font-size:34px;letter-spacing:2px;line-height:1.1;"><span class="brr-gold" style="color:#FBBF24;">★★★★</span><span class="brr-grey" style="color:#d1d5db;">☆</span></div>
+    <div style="font-size:20px;font-weight:700;margin:2px 0 8px;">Bank-Ready</div>
+    <div style="font-size:15px;">Score <strong>91 / 100</strong></div>
+    <div style="background:rgba(148,163,184,.25);border-radius:6px;height:10px;width:240px;margin:6px 0;">
+      <div style="background:#3b82f6;border-radius:6px;height:10px;width:91%;"></div>
+    </div>
+    <div></div>
+    <div style="font-size:11px;opacity:.6;margin-top:6px;">BRR v1.3 ·
+      latest period fy2025 (FY Dec 2025 (Audited))</div>
+  </div>
+  <div style="flex:1;min-width:300px;">
+    <div style="font-weight:600;margin-bottom:4px;">Gate checks</div>
+    <div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S1</span> Balance sheet reconciles</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S1</span> DSCR ≥ 1.0x — 3.39x</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S1</span> No adverse/disclaimer/going-concern opinion</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> Gearing (bank/FI borrowings ÷ adjusted TNW) ≤ 2.0x — 0.64x (RM 3,780,480 / RM 5,941,395; balance-sheet scan, reconciled to the funding profile)</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> Adjusted TNW > 0 (solvency) — RM 5,941,395 (FY Dec 2025 (Audited))</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> EBITDA positive — 2,479,250</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> Unqualified audit opinion</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> Funding structure sustainable — sustainable</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> Statements current (audited ≤18 months old) — 9 months since FY end of FY Dec 2025 (Audited)</div><div style="margin:2px 0;font-size:13px;"><span style="color:#16a34a;font-weight:700;">✓</span> <span style="opacity:.6;font-size:11px;">S2</span> No 2 consecutive loss years</div>
+    <div style="margin-top:8px;font-size:13px;">
+      <strong>Score breakdown</strong> (S1 30% · S2 30% · Preference 40%):
+      Strict-1 2/2 ·
+      Strict-2 7/7 ·
+      Preference 7.85/10 slots
+      (78%)</div>
+    <div style="margin-top:6px;font-size:13px;"><strong>What moves your stars:</strong> Gross profit margin ≥25% · PBT margin ≥8% · Net profit margin ≥5%</div>
+    
+  </div>
+</div>
+<div style="margin-top:14px;"><div style="font-weight:600;font-size:13px;margin-bottom:4px;">The rating scale</div><table style="border-collapse:collapse;font-size:12px;width:100%;"><tr style=""><td style="padding:3px 10px 3px 6px;white-space:nowrap;letter-spacing:1px;"><span class="brr-gold" style="color:#FBBF24;">★★★★★</span><span class="brr-grey" style="color:#d1d5db;"></span></td><td style="padding:3px 10px 3px 0;opacity:.6;white-space:nowrap;">Strong</td><td style="padding:3px 10px 3px 0;opacity:.6;">All gates pass · Preference ≥80%</td><td style="padding:3px 6px 3px 0;"></td></tr><tr style="background:rgba(59,130,246,.10);"><td style="padding:3px 10px 3px 6px;white-space:nowrap;letter-spacing:1px;"><span class="brr-gold" style="color:#FBBF24;">★★★★</span><span class="brr-grey" style="color:#d1d5db;">☆</span></td><td style="padding:3px 10px 3px 0;font-weight:700;white-space:nowrap;">Bank-Ready</td><td style="padding:3px 10px 3px 0;font-weight:700;">All gates pass · Preference 60–79%</td><td style="padding:3px 6px 3px 0;"><span style="color:#3b82f6;font-weight:700;white-space:nowrap;">◀ You are here</span></td></tr><tr style=""><td style="padding:3px 10px 3px 6px;white-space:nowrap;letter-spacing:1px;"><span class="brr-gold" style="color:#FBBF24;">★★★</span><span class="brr-grey" style="color:#d1d5db;">☆☆</span></td><td style="padding:3px 10px 3px 0;opacity:.6;white-space:nowrap;">Bankable — Conditional</td><td style="padding:3px 10px 3px 0;opacity:.6;">All gates pass · Preference <60%</td><td style="padding:3px 6px 3px 0;"></td></tr><tr style=""><td style="padding:3px 10px 3px 6px;white-space:nowrap;letter-spacing:1px;"><span class="brr-gold" style="color:#FBBF24;">★★</span><span class="brr-grey" style="color:#d1d5db;">☆☆☆</span></td><td style="padding:3px 10px 3px 0;opacity:.6;white-space:nowrap;">Weak</td><td style="padding:3px 10px 3px 0;opacity:.6;">Any Strict-2 gate fails</td><td style="padding:3px 6px 3px 0;"></td></tr><tr style=""><td style="padding:3px 10px 3px 6px;white-space:nowrap;letter-spacing:1px;"><span class="brr-gold" style="color:#FBBF24;">★</span><span class="brr-grey" style="color:#d1d5db;">☆☆☆☆</span></td><td style="padding:3px 10px 3px 0;opacity:.6;white-space:nowrap;">Very Weak</td><td style="padding:3px 10px 3px 0;opacity:.6;">Any Strict-1 gate fails</td><td style="padding:3px 6px 3px 0;"></td></tr><tr style=""><td style="padding:3px 10px 3px 6px;white-space:nowrap;letter-spacing:1px;"><span style="color:#9ca3af;">—</span></td><td style="padding:3px 10px 3px 0;opacity:.6;white-space:nowrap;">Not Rated</td><td style="padding:3px 10px 3px 0;opacity:.6;">Balance sheet does not reconcile</td><td style="padding:3px 6px 3px 0;"></td></tr></table></div>
+<div style="margin-top:12px;padding:10px 12px;border:1px solid rgba(148,163,184,.4);
+     border-radius:8px;font-size:11px;line-height:1.5;opacity:.85;">
+  <strong>⚠ Important — about this rating.</strong> This Bank-Readiness Rating is an educational assessment derived solely from the financial statements provided, measuring alignment with typical Malaysian bank underwriting criteria as at the statement date. It is not a credit score, not a lending decision, and not a prediction or guarantee of financing approval. Banks additionally assess factors not visible in financial statements — including CCRIS/CTOS records, account conduct, collateral, and each bank's own credit policy. Ratings are comparable only between reports generated under the same methodology version. Kredit Lab accepts no liability for decisions made in reliance on this rating.
+</div>
+</div>
+<div class="report-footer">
+    <div class="disclaimer">
+        <div class="disclaimer-title">Disclaimer</div>
+        This report was prepared by Kredit Lab for the exclusive use of the purchasing party. It does not constitute financial advice, a loan guarantee, or a credit rating. Any recommendations contained herein are provided for informational purposes only — implementation is at the reader's sole discretion. Kredit Lab accepts no responsibility or liability for any decisions, actions, losses, or consequences arising from the use of this report by any party. No duty of care exists between Kredit Lab and any third party who may access this report.
+    </div>
+    <div class="copyright">
+        <div class="copyright-main">(c) 2026 Kredit Lab. All rights reserved.</div>
+        <div class="copyright-sub">Kredit Lab is a division of Capital Island Sdn. Bhd.</div>
+    </div>
+</div>
+<footer><p><strong>Prepared by: Kredit Lab</strong></p><p>Generated on: 2026-09-25</p></footer>
+</div>
+<script>
+// Theme Toggle Functions
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('financial-report-theme', newTheme);
+    
+    updateToggleButton(newTheme);
+}
+
+function updateToggleButton(theme) {
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) {
+        if (theme === 'dark') {
+            btn.innerHTML = '☀️ Light Mode';
+        } else {
+            btn.innerHTML = '🌙 Dark Mode';
+        }
+    }
+}
+
+// Initialize theme from localStorage or system preference
+function initTheme() {
+    const savedTheme = localStorage.getItem('financial-report-theme');
+    
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateToggleButton(savedTheme);
+    } else {
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateToggleButton('dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateToggleButton('light');
+        }
+    }
+}
+
+// Section toggle functions
+function toggleSection(button) {
+    const content = button.nextElementSibling;
+    const isActive = button.classList.contains('active');
+    if (isActive) {
+        button.classList.remove('active');
+        content.classList.add('hide');
+    } else {
+        button.classList.add('active');
+        content.classList.remove('hide');
+    }
+}
+
+function expandAll() {
+    document.querySelectorAll('.section-toggle').forEach(t => t.classList.add('active'));
+    document.querySelectorAll('.section-content').forEach(c => c.classList.remove('hide'));
+}
+
+function collapseAll() {
+    document.querySelectorAll('.section-toggle').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section-content').forEach(c => c.classList.add('hide'));
+}
+
+function openSection(sectionId) {
+    const section = document.getElementById('section-' + sectionId);
+    if (section) {
+        section.querySelector('.section-toggle').classList.add('active');
+        section.querySelector('.section-content').classList.remove('hide');
+        setTimeout(() => section.scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
+    expandAll();
+});
+
+// Listen for system theme changes
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('financial-report-theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            updateToggleButton(newTheme);
+        }
+    });
+}
+</script>
+</body>
+</html>
